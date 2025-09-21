@@ -33,6 +33,7 @@
 
 from mcp.server.fastmcp import FastMCP
 
+# mcp = FastMCP("FlightTools",host="0.0.0.0", port=8001)
 mcp = FastMCP("FlightTools")
 
 flight_tool_def = {
@@ -56,22 +57,22 @@ def search_flights(origin: str, destination: str, date: str):
     return "there is no flight avalibvle for this location"
 
 
-Weather_tool_def = {
-    "name": "getWeather",
-    "description": "Get weather information for a city",
-    "inputSchema": {
-        "type": "object",
-        "properties": {
-            "city": {"type": "string"}
-        },
-        "required": ["city"]
-    }
-}
+# Weather_tool_def = {
+#     "name": "getWeather",
+#     "description": "Get weather information for a city",
+#     "inputSchema": {
+#         "type": "object",
+#         "properties": {
+#             "city": {"type": "string"}
+#         },
+#         "required": ["city"]
+#     }
+# }
 
-@mcp.tool(name=Weather_tool_def["name"], description=Weather_tool_def["description"])
-def get_weather(city: str):
-    """Returns weather information for a given city."""
-    return f"The weather in {city} is sunny with 25°C"
+# @mcp.tool(name=Weather_tool_def["name"], description=Weather_tool_def["description"])
+# def get_weather(city: str):
+#     """Returns weather information for a given city."""
+#     return f"The weather in {city} is sunny with 25°C"
 
 if __name__ == "__main__":
     mcp.run(transport="streamable-http")
