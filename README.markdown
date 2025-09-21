@@ -116,5 +116,3 @@ Run `client1.py` to execute the following example queries:
 ## Contributing
 Contributions are welcome! Please submit a pull request or open an issue for bugs, improvements, or new features.
 
-## License
-This project is licensed under the MIT License.
